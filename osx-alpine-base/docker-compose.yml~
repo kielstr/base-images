@@ -1,0 +1,6 @@
+version: '2.1'
+
+services: 
+    osx-alpine-base:
+        image: namic:5000/osx-alpine-base
+        build: .

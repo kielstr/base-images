@@ -1,0 +1,102 @@
+
+*** These modified files were found in JOE when it aborted on Sun Dec  3 00:42:44 2017
+*** JOE was aborted by UNIX signal 15
+
+*** File '(Unnamed)'
+#  postgres:
+#    container_name: postgres
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - "$PWD/postgres/data:/var/lib/postgresql"
+#    image: postgres:9.6.3
+#    build: $PWD/postgres
+#    env_file:
+#      - db.env
+#    networks:
+#       - cluster-1
+#    healthcheck:
+#      test: ["CMD-SHELL", "/bin/db_ready.pl"]
+#      interval: 1s
+#      timeout: 30s
+#      retries: 0
+
+  mysql:
+    container_name: mysql
+    build: mysql
+    image: kiels-laptop:5000/mysql
+    environment:
+      - MYSQL_DATABASES=acidworx
+      - MYSQL_ROOT_PASSWORD=acidworx
+      - MYSQL_HOST=127.0.0.1
+      - MYSQL_PORT=3306
+      - MYSQL_USER=acidworx
+      - MYSQL_PASSWORD=TrippyMoon1234
+      - MYSQL_MY_DATABASE=acidworx
+    ports:
+      - "3306:3306"
+    volumes:
+      - "$PWD/mysql/data:/var/lib/mysql"
+    networks:
+      - cluster-1
+
+#  minion_worker: 
+#    container_name: minion_worker
+#    image: kiels-laptop:5000/minion_build
+#    build: $PWD/minion
+#    command: /data/worker.pl
+#    volumes:
+#      - $PWD/minion/data:/data
+#    environment:
+#      CONNECTION_STRING: 'postgresql://mic:mic@kiels-laptop/mic'
+#      NUMBER_OF_JOBS: 12
+#    env_file:
+#      - db.env
+#    depends_on:
+#      #postgres:
+#      #  condition: service_healthy
+#      - postgres
+#    #tty: true
+#    healthcheck:
+#      test: ["CMD-SHELL", "/bin/db_ready.pl"]
+#      interval: 1s
+#      timeout: 30s
+#      retries: 0
+#    networks:
+#      - cluster-1
+
+
+*** File '(Unnamed)'
+exit
+qui
+Z
+help
+help
+current
+configs
+local
+sdlocal
+volumes_from
+
+*** File '(Unnamed)'
+create-swa
+create-swarm.sh
+create-swarm.sh
+/Users/kiel/.bash_profile
+/Users/kiel/.bash_profile
+/Users/kiel/.bash_profile
+/Users/kiel/.bash_profile
+Dockerfile
+Dockerfile
+Dockerfile
+docker-compose.yml
+docker-compose.yml
+webapp-base/Dockerfile
+webapp-base/Dockerfile
+webapp-base/Dockerfile
+
+*** File '* Startup Log *'
+Processing '/Users/kiel/.jpicorc'...
+Processing '/usr/local/Cellar/joe/4.3/etc/joe/ftyperc'...
+Finished processing /usr/local/Cellar/joe/4.3/etc/joe/ftyperc
+Finished processing /Users/kiel/.jpicorc
