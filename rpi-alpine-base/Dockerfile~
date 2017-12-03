@@ -1,0 +1,6 @@
+FROM alpine AS rpi-alpine-base
+RUN apk update && apk upgrade
+RUN apk add perl
+
+RUN apk update && apk add perl perl-dev curl
+RUN curl -L http://xrl.us/cpanm > /bin/cpanm && chmod +x /bin/cpanm
