@@ -1,5 +1,7 @@
 FROM alpine AS osx-alpine-base
 
+LABEL maintainer="kielstr@cpan.org";
+
 # Small alpine image for use as a base for all my Raspberry Pi
 # builds
 
