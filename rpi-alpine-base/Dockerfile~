@@ -1,6 +1,10 @@
-FROM alpine AS rpi-alpine-base
-RUN apk update && apk upgrade
-RUN apk add perl
+FROM alpine AS osx-alpine-base
 
-RUN apk update && apk add perl perl-dev curl
-RUN curl -L http://xrl.us/cpanm > /bin/cpanm && chmod +x /bin/cpanm
+# Small alpine image for use as a base for all my Raspberry Pi
+# builds
+
+RUN apk update && \
+	apk add --no-cache gcc g++ make perl perl-dev curl wget bash
+
+RUN curl -L http://xrl.us/cpanm > /bin/cpanm && \
+	chmod +x /bin/cpanm

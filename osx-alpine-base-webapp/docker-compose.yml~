@@ -1,6 +1,6 @@
 version: '2.1'
 
 services: 
-    rpi-alpine-base:
-        image: namic:5000/rpi-alpine-base
+    rpi-alpine-base-webapp:
+        image: namic:5000/osx-alpine-base-webapp
         build: .

@@ -1,6 +1,18 @@
-FROM alpine AS rpi-alpine-base-webapp
-RUN apk update && apk upgrade
-RUN apk add perl
+FROM namic:5000/osx-alpine-base AS osx-alpine-base-webapp
 
-RUN apk update && apk add perl perl-dev curl
-RUN curl -L http://xrl.us/cpanm > /bin/cpanm && chmod +x /bin/cpanm
+# Dancer web app base image build on Alpine Linux.
+
+RUN apk add --no-cache \
+	perl-dbd-pg \
+	perl-dbd-mysql
+
+RUN cpanm --no-wget -n -i \
+		Dancer2 \
+		Dancer2::Plugin::Database \
+		Starman \
+		Plack::Middleware::ReverseProxy \
+		Plack::Middleware::ReverseProxyPath \
+		Plack::Middleware::Deflater \
+		Mojolicious \
+		Minion \
+		Mojo::Pg

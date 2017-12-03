@@ -1,6 +1,6 @@
 version: '2.1'
 
 services: 
-    rpi-alpine-base-minion:
+    osx-alpine-base-minion:
         image: namic:5000/osx-alpine-base-minion
         build: .

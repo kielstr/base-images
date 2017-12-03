@@ -12,4 +12,16 @@ services:
     osx-alpine-base-webapp:
         build: $PWD/osx-alpine-base-webapp
         image: namic:5000/osx-alpine-webapp
+
+    rpi-alpine-base:
+        image: namic:5000/rpi-alpine-base
+        build: $PWD/rpi-alpine-base
+    
+    rpi-alpine-base-minion:
+        build: $PWD/rpi-alpine-base-minion
+        image: namic:5000/rpi-alpine-minion   
+    
+    rpi-alpine-base-webapp:
+        build: $PWD/rpi-alpine-base-webapp
+        image: namic:5000/rpi-alpine-webapp
     

@@ -1,7 +1,0 @@
-version: '2.1'
-
-services:
-  rpi-webapp-base:
-    container_name: rpi-webapp-base
-    image: namic:5000/rpi-webapp-base
-    build: $PWD

@@ -1,6 +1,18 @@
 FROM namic:5000/rpi-alpine-base AS rpi-alpine-base-webapp
 
-#RUN curl -L http://xrl.us/cpanm > /bin/cpanm && chmod +x /bin/cpanm
+# Dancer web app base image build on Alpine Linux.
 
-RUN curl -L http://cpanmin.us | perl - --sudo Dancer2
-#RUN cpanm -n -i Dancer2 --no-wget
+RUN apk add --no-cache \
+	perl-dbd-pg \
+	perl-dbd-mysql
+
+RUN cpanm --no-wget -n -i \
+		Dancer2 \
+		Dancer2::Plugin::Database \
+		Starman \
+		Plack::Middleware::ReverseProxy \
+		Plack::Middleware::ReverseProxyPath \
+		Plack::Middleware::Deflater \
+		Mojolicious \
+		Minion \
+		Mojo::Pg
