@@ -6,7 +6,7 @@ RUN apk add --no-cache \
 	perl-dbd-pg \
 	perl-dbd-mysql
 
-RUN cpanm --no-wget -n -i \
+RUN cpanm --auto-cleanup --no-wget -n -i \
 		Dancer2 \
 		Dancer2::Plugin::Database \
 		Starman \
