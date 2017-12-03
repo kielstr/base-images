@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  osx-webapp-base:
+    container_name: webapp-base
+    image: namic:5000/webapp-base
+    build: $PWD
