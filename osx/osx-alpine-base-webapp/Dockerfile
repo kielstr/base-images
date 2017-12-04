@@ -15,4 +15,5 @@ RUN cpanm --auto-cleanup --no-wget -n -i \
 		Plack::Middleware::Deflater \
 		Mojolicious \
 		Minion \
-		Mojo::Pg
+		Mojo::Pg \
+		Mojo::mysql
