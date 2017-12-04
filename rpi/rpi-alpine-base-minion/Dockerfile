@@ -4,4 +4,9 @@ RUN apk add --no-cache \
 	perl-dbd-pg \
 	perl-dbd-mysql
 	
-RUN cpanm --no-wget -i -n Mojolicious Minion Mojo::Pg
+RUN cpanm --no-wget -i -n \
+    Mojolicious \
+    Minion \
+    Mojo::Pg \
+    Mojo::mysql \
+    Minion::Backend::mysql
