@@ -16,3 +16,19 @@ services:
     image: namic:5000/osx-alpine-base-webapp
     depends_on:
       - osx-alpine-base
+
+  osx-alpine-mojo:
+    build: $PWD/osx-alpine-mojo
+    image: namic:5000/osx-alpine-mojo
+    depends_on:
+      - osx-alpine-base
+    volumes:
+      - $PWD/osx-alpine-mojo/example-app:/example-app
+    environment:
+      - "PERL5LIB=/example-app"
+    ports:
+      - "443:443"
+    command: hypnotoad -f /example-app/MyApp.pl
+
+            
+            

@@ -21,4 +21,4 @@ RUN cpanm --auto-cleanup --no-wget -n -i \
 	Minion \
 	Mojo::Pg \
 	Mojo::mysql \
-	Minion::Backend::mysql \
+	Minion::Backend::mysql 
