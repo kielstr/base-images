@@ -1,6 +1,7 @@
 FROM namic:5000/rpi-alpine-base AS osx-apline-mojo
 
-# Required for Minion
+# Required for API calls
+
 RUN apk add --no-cache \
 	perl-dbi \
 	perl-dbd-pg \
