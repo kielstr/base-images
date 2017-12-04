@@ -9,8 +9,8 @@ RUN apk add --no-cache \
 	perl-io-socket-ssl
 
 RUN cpanm --auto-cleanup --no-wget -i -n \
-  Mojo \
-  Mojo::IOLoop \
-  Mojo::Pg \
-  Mojo::JSON \
-  Mojo::Server::Hypnotoad
+    Mojo \
+    Mojo::IOLoop \
+    Mojo::Pg \
+    Mojo::JSON \
+    Mojo::Server::Hypnotoad
